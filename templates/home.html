@@ -1,0 +1,16 @@
+<h1>Home</h1>
+        <a href='/register'>Register</a> | <a href='/login'>Login</a> | <a href='/logout'>Logout</a>
+        {% if g.user and g.user.is_admin %}
+            <a href='/add_news'>Add News</a> | <a href='/add_article'>Add Article</a>
+        {% endif %}
+        <h2>News</h2>
+        {% for item in news %}
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.content }}</p>
+        {% endfor %}
+        <h2>Articles</h2>
+        {% for item in articles %}
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.content }}</p>
+        {% endfor %}
+        
